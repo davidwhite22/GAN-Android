@@ -35,6 +35,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/filter_bg"
                 android:ems="10"
+                android:imeOptions="normal"
                 android:inputType="textNoSuggestions|text"
                 android:padding="5dp"
                 android:singleLine="true"

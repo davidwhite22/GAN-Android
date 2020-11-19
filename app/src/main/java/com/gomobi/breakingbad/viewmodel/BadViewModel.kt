@@ -32,7 +32,7 @@ class BadViewModel(application: Application): AndroidViewModel(application) {
             try {
                 if (client.characters == null) {
                     client.characters = client.getCharacters()
-                    characterList.apply { value = client.getCharacters() }
+                    characterList.apply { value = client.characters }
                 } else {
                     characterList.apply { value = client.characters }
                 }

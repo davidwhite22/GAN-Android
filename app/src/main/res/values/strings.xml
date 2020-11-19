@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">BreakingBad</string>
+
+    <string name="title_home">Breaking Bad Explorer</string>
+    <string name="tvName">Name</string>
+    <string name="tvSeries">Series</string>
+
+    <string name="spAnySeries">Any Series</string>
+    <string name="spSeries">Series %d</string>
+
+    <string name="tvOccupation">Occupation</string>
+    <string name="tvStatus">Status</string>
+    <string name="tvNickname">Nickname</string>
+    <string name="tvAppearance">Season Appearance</string>
+
+    <string name="error">Error</string>
+    <string name="error_Msg">An internet error has occurred.\nWould you like to retry?</string>
+    <string name="error_yes">Yes</string>
+    <string name="error_no">No</string>
+
+    <string name="loading">Loading characters.\nPlease wait&#8230;</string>
+
+</resources>

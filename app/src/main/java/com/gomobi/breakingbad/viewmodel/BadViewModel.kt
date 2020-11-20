@@ -45,14 +45,9 @@ class BadViewModel(application: Application): AndroidViewModel(application) {
 
     fun filter(filter: CharacterFilter) {
         filter.name = filter.name.toUpperCase(Locale.UK)
-        val filteredList = ArrayList<BadCharacter>()
-        if (client.characters != null) {
-            for (ch in client.characters!!) {
-                if (ch.compliesWith(filter)) {
-                    filteredList.add(ch)
-                }
-            }
-            characterList.apply { value = filteredList }
+        client.characters?.let { chars ->
+            val filteredList = chars.filter { item -> item.compliesWith(filter) }
+            characterList.apply { value = filteredList as ArrayList<BadCharacter>}
         }
     }
 

@@ -60,30 +60,9 @@ data class BadCharacter(
     }
 
     fun compliesWith(filter: CharacterFilter): Boolean {
-        return if (filter.name.isNotEmpty()) {
-            when (filter.seriesAppearance) {
-                0 -> name.toUpperCase(Locale.UK).startsWith(filter.name)
-                else -> {
-                    if (appearance.isNullOrEmpty()) {
-                        false
-                    } else {
-                        name.toUpperCase(Locale.UK).startsWith(filter.name) &&
-                                appearance.contains(filter.seriesAppearance)
-                    }
-                }
-            }
-        } else {
-            when (filter.seriesAppearance) {
-                0 -> true
-                else -> {
-                    if (appearance.isNullOrEmpty()) {
-                        false
-                    } else {
-                        appearance.contains(filter.seriesAppearance)
-                    }
-                }
-            }
-        }
-
+        val nameOk = if (filter.name.isEmpty()) true else name.toUpperCase(Locale.UK).startsWith(filter.name)
+        val appOK = if (filter.seriesAppearance == 0) true else
+            if (appearance.isNullOrEmpty()) false else appearance.contains(filter.seriesAppearance)
+        return if (nameOk) appOK else false
     }
 }
